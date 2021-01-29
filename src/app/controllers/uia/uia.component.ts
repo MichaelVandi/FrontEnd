@@ -19,8 +19,8 @@ export class UIAComponent {
         this.router.navigate(['./uia']);
     }
 
-    status: boolean = false;
-    status1: boolean = false; 
+    status1: boolean = false;
+    status2: boolean = false; 
     supplystatus: boolean = false; 
     supply1status: boolean = false;
     waste1status: boolean =  false; 
@@ -39,7 +39,7 @@ THE TELEMETRY VALUES ARE MANIPULATED BY THE STATE (ON OR OFF) OF EACH FUNCTION.
     
 
     emuOnOff1() {
-        this.status1 = !this.status;
+        this.status1 = !this.status1;
         if (!this.status1){
             {this.http.patch('http://localhost:3000/api/simulation/newuiacontrols?emu1=false', {
             })
@@ -59,8 +59,8 @@ THE TELEMETRY VALUES ARE MANIPULATED BY THE STATE (ON OR OFF) OF EACH FUNCTION.
         }
     }
     emuOnOff2() {
-        this.status = !this.status;
-        if (!this.status){
+        this.status2 = !this.status2;
+        if (!this.status2){
             {this.http.patch('http://localhost:3000/api/simulation/newuiacontrols?emu2=false', {
             })
             .subscribe(data => {
